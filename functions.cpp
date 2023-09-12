@@ -1,21 +1,26 @@
 #include <iostream>
+#include <string>
 using namespace std;
-void serveFood(int &slices);
-
-int main(){
-    int peicesOfcake;
-    peicesOfcake = 10;
-    int slices;
-    slices = peicesOfcake;
-    for (int i = 0; i < peicesOfcake; i++) {
-        serveFood(slices);
-        cout << slices << endl;
-    }
+int myFunction(int x) {
+    return x*x*x;
     
 }
-
-void serveFood(int &slices) {
-    // code to serve food to guests
-    slices = slices -1;
+int main() {
+    // Write C++ code here
+    string choice;
+    while (choice != "N" && choice !="n") {
+        cout << "Put in an integer:";
+        int x;
+        cin >> x;
+        x = myFunction(x);
+        cout << "The cube of your function is: " << x << endl;
+        cout << "would you like to find the cube of another number? (Y/N)";
+        cin >> choice;
+        while (choice != "Y" && choice != "N" && choice != "y" && choice != "n") {
+            cout << "that is not an option try again (Y/N) ";
+            cin >> choice;
+        }
+    }
+    
+    return 0;
 }
-
